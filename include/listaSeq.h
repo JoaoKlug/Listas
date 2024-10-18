@@ -1,15 +1,17 @@
+#pragma once
+
 #include "pessoa.h"
 #include<cstdio>
 
 class ListaSeq {
 
     long tam;
-    Pessoa* listaP;
+    Pessoa* listaSeq;
 
     public:
 
     ListaSeq();
-    ~ListaSeq(){ delete listaP; }
+    ~ListaSeq(){ delete listaSeq; }
 
     void countLines(FILE* file);
     void preencherListaSeq(FILE* file);

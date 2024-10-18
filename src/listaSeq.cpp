@@ -3,7 +3,7 @@
 ListaSeq:: ListaSeq(){
 
     tam = 0;
-    listaP = nullptr;
+    listaSeq = nullptr;
 }
 
 void ListaSeq:: countLines(FILE* file){
@@ -22,12 +22,12 @@ void ListaSeq:: countLines(FILE* file){
 
 void ListaSeq:: preencherListaSeq(FILE* file){
 
-    listaP = new Pessoa[tam];
+    listaSeq = new Pessoa[tam];
 
     int i;
 
     i = 0;
-    while(fscanf(file, "%9[^,] , %d", listaP[i].nome, &listaP[i].rg) != EOF)
+    while(fscanf(file, "%9[^,] , %d", listaSeq[i].nome, &listaSeq[i].rg) != EOF)
         i++;
 
 }
@@ -36,6 +36,6 @@ void ListaSeq:: imprimirListaSeq(){
 
      int i;
      for(i = 0; i<tam; i++)
-        printf("%s  %d \n", listaP[i].nome, listaP[i].rg);
+        printf("%s  %d \n", listaSeq[i].nome, listaSeq[i].rg);
  }
 
