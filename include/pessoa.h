@@ -5,7 +5,7 @@ typedef struct{
     char nome[10] = "";
 } Pessoa;
 
-typedef struct{
+struct PessoaEnc{
     Pessoa pessoa;
-    Pessoa* pPrxP = nullptr;
-}PessoaEnc;
+    PessoaEnc* pPrxP = nullptr;
+};

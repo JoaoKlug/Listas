@@ -6,7 +6,6 @@
 class ListaEnc {
 
     PessoaEnc* pPrimPessoa;
-    PessoaEnc* pUltmPessoa;
 
     public:
 
