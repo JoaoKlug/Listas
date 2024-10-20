@@ -19,8 +19,9 @@ void ListaEnc::preencherListaEnc(FILE *file){
 
     pAux = new PessoaEnc;
 
+    
     fscanf(file, "%9[^,] , %d", pPrimPessoa->pessoa.nome, &(pPrimPessoa->pessoa.rg));
-
+    
     fscanf(file, "%9[^,] , %d", pAux->pessoa.nome, &(pAux->pessoa.rg));
 
 
@@ -43,6 +44,14 @@ void ListaEnc::preencherListaEnc(FILE *file){
 
 void ListaEnc::imprimirListaEnc(){
 
-    
+    PessoaEnc* pAux;
+
+    pAux = pPrimPessoa;
+
+    while(pAux->pPrxP != nullptr){
+
+        printf("%s - RG: %d \n", pAux->pessoa.nome, pAux->pessoa.rg);
+        pAux = pAux->pPrxP;
+    }
     
 }
