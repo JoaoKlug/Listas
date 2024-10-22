@@ -11,7 +11,7 @@ ListaEnc::~ListaEnc(){
     
 }
 
-void ListaEnc::preencherListaEnc(FILE *file){
+void ListaEnc::preencher(FILE *file){
 
     PessoaEnc* pAux;
     PessoaEnc* pUltmPessoa;
@@ -42,7 +42,7 @@ void ListaEnc::preencherListaEnc(FILE *file){
     
 }
 
-void ListaEnc::imprimirListaEnc(){
+void ListaEnc::imprimir(){
 
     PessoaEnc* pAux;
 
@@ -54,4 +54,24 @@ void ListaEnc::imprimirListaEnc(){
         pAux = pAux->pPrxP;
     }
     
+}
+
+void ListaEnc::inserirComeco(Pessoa pessoa){
+
+}
+void ListaEnc::inserirFinal(Pessoa pessoa){
+
+}
+void ListaEnc::inserir(Pessoa pessoa, long n){
+
+}
+
+void ListaEnc::removerComeco(){
+
+}
+void ListaEnc::removerFinal(){
+
+}
+void ListaEnc::remover(long n){
+
 }

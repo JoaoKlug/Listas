@@ -8,20 +8,27 @@
  int main(){
 
     FILE* file;
-    ListaSeq seq;
-    ListaEnc enc;
+    ListaSeq sequencial;
+    ListaEnc encadeada;
 
     file = fopen(FILE_PATH, "r");
-    seq.countLines(file);
+    sequencial.setTam(file);
 
     file = fopen(FILE_PATH, "r");
-    seq.preencherListaSeq(file);
+    sequencial.preencher(file);
 
-    file = fopen(FILE_PATH, "r");
-    enc.preencherListaEnc(file);
+    sequencial.imprimir();
+    
+    sequencial.remover(4);
+    sequencial.removerComeco();
+    sequencial.removerFinal();
+    
+    sequencial.imprimir();
 
-    seq.imprimirListaSeq();
-    enc.imprimirListaEnc();
+    /*file = fopen(FILE_PATH, "r");
+    encadeada.preencher(file);
+
+    encadeada.imprimir();*/
 
     return 0;
  }

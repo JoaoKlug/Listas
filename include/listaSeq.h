@@ -13,9 +13,19 @@ class ListaSeq {
     ListaSeq();
     ~ListaSeq(){ delete listaSeq; }
 
-    void countLines(FILE* file);
-    void preencherListaSeq(FILE* file);
-    void imprimirListaSeq();
+    void setTam(FILE* file);
+    void preencher(FILE* file);
+    void imprimir();
+
+    void inserirComeco(Pessoa pessoa);
+    void inserirFinal(Pessoa pessoa);
+    void inserir(Pessoa pessoa, long n);
+
+    void removerComeco();
+    void removerFinal();
+    void remover(long n);
+
+    
 
 };
 
