@@ -22,6 +22,6 @@ $(BIN_DIR) $(OBJ_DIR):
 	mkdir -p $@
 
 clean:
-	$(RM) -r $(BIN_DIR)/* $(OBJ_DIR)/*
+	$(RM) -r $(BIN_DIR) $(OBJ_DIR)
 
 .PHONY: all clean build

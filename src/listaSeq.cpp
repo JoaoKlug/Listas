@@ -6,45 +6,49 @@ ListaSeq::ListaSeq(){
     listaSeq = nullptr;
 }
 
-void ListaSeq::setTam(FILE* file){
+ListaSeq::~ListaSeq(){
+    deleteList();
+}
 
-    long lines;
-    char ch;
+void ListaSeq::deleteList(){
 
-    lines = 0;
-    while((ch = fgetc(file))!= EOF){
-        if(ch == '\n')
-            lines++;
+    if(listaSeq != nullptr){
+       delete listaSeq;
+       tam = 0;
+       listaSeq = nullptr;
     }
+}
 
-    tam = lines;
+void ListaSeq::setTam(int t){
+    tam = t;
  }
 
 void ListaSeq::preencher(FILE* file){
 
+    int i;
+    
     listaSeq = new Pessoa[tam];
-
-    long i;
 
     i = 0;
     while(fscanf(file, "%9[^,] , %d", listaSeq[i].nome, &listaSeq[i].rg) != EOF)
         i++;
-
 }
 
 void ListaSeq::imprimir(){
 
-     long i;
-     for(i = 0; i<tam; i++)
-        printf("\n%ld %s %d\n", i ,listaSeq[i].nome, listaSeq[i].rg);
+    int i;
+
+    printf("\n----- Lista Sequencial -----\n\n");
+    for(i = 0; i<tam; i++)
+        printf("%s - rg: %d - %d\n", listaSeq[i].nome, listaSeq[i].rg, i);
     
-     printf("\n--------------------------------------\n");
+    printf("----------------------------\n");
  }
 
-void ListaSeq::inserirComeco(Pessoa pessoa){
+void ListaSeq::inserirInicio(Pessoa pessoa){
 
     Pessoa* novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[tam+1];
 
@@ -59,10 +63,10 @@ void ListaSeq::inserirComeco(Pessoa pessoa){
 
     delete pAux;
 }
-void ListaSeq::inserirFinal(Pessoa pessoa){
+void ListaSeq::inserirFim(Pessoa pessoa){
 
     Pessoa* novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[tam+1];
 
@@ -78,10 +82,10 @@ void ListaSeq::inserirFinal(Pessoa pessoa){
     delete pAux;
 
 }
-void ListaSeq::inserir(Pessoa pessoa, long n){
+void ListaSeq::inserir(Pessoa pessoa, int n){
 
     Pessoa* novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[tam+1];
 
@@ -102,10 +106,10 @@ void ListaSeq::inserir(Pessoa pessoa, long n){
 
 }
 
-void ListaSeq::removerComeco(){
+void ListaSeq::removerInicio(){
 
     Pessoa* novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[tam-1];
 
@@ -119,10 +123,10 @@ void ListaSeq::removerComeco(){
     delete pAux;
 
 }
-void ListaSeq::removerFinal(){
+void ListaSeq::removerFim(){
 
     Pessoa *novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[tam-1];
 
@@ -136,10 +140,10 @@ void ListaSeq::removerFinal(){
     delete pAux;
 
 }
-void ListaSeq::remover(long n){
+void ListaSeq::remover(int n){
 
     Pessoa* novaLista, *pAux;
-    long i;
+    int i;
     
     novaLista = new Pessoa[(tam-1)];
 
