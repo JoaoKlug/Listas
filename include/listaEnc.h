@@ -5,8 +5,13 @@
 
 class ListaEnc {
 
+    int tam;
     PessoaEnc* pPrimPessoa;
     PessoaEnc* pUltmPessoa;
+
+    float tempo;
+    int n_condicoes;
+    int n_atribuicoes;
 
     public:
 
@@ -14,6 +19,11 @@ class ListaEnc {
     ~ListaEnc(); //lebrar de aterrar todos os ponteiros
 
     void deleteList();
+
+    void setTam(int t);
+    void setPtrTempo(float *tmp);
+    void setPtrCondicoes(int *nc);
+    void setPtrAtribuicoes(int *na);
 
     void preencher(FILE* file);
     void imprimir();
@@ -25,4 +35,8 @@ class ListaEnc {
     void removerInicio();
     void removerFim();
     void remover(int n);
+
+    void procurarPessoa(int rg);
+
+    void salvarArquivo(FILE *file);
 };

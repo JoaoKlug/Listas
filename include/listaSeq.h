@@ -8,6 +8,10 @@ class ListaSeq {
     int tam;
     Pessoa* listaSeq;
 
+    float tempo;
+    int n_condicoes;
+    int n_atribuicoes;
+
     public:
 
     ListaSeq();
@@ -15,8 +19,9 @@ class ListaSeq {
 
     void deleteList();
 
-
     void setTam(int t);
+    int getTam();
+    
     void preencher(FILE* file);
     void imprimir();
 
@@ -27,6 +32,9 @@ class ListaSeq {
     void removerInicio();
     void removerFim();
     void remover(int n);
+
+    void procurarPessoa(int rg);
+    void salvarArquivo(FILE *file);
 
 };
 
