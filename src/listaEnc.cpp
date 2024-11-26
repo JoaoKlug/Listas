@@ -44,6 +44,14 @@ void ListaEnc::setTam(int t){
     tam = t;
 }
 
+const int ListaEnc::getTam(){
+    return tam;
+}
+
+PessoaEnc* ListaEnc::getPPrimPessoa(){
+    return pPrimPessoa;
+}
+
 void ListaEnc::preencher(FILE *file){
 
     PessoaEnc* pAux;

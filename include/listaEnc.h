@@ -21,6 +21,10 @@ class ListaEnc {
     void deleteList();
 
     void setTam(int t);
+    const int getTam();
+
+    PessoaEnc* getPPrimPessoa();
+
     void setPtrTempo(float *tmp);
     void setPtrCondicoes(int *nc);
     void setPtrAtribuicoes(int *na);
