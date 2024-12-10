@@ -231,6 +231,9 @@ void Tela::sorts(){
 
     sort.preencherList(&encadeada);
 
+    if(sort.getListSort() == nullptr)
+        return;
+
     while(flag){
 
         ImprimeOpcoesSort();
@@ -269,6 +272,30 @@ void Tela::sorts(){
 }
 
 void Tela::salvar(){
+
+    int opcao;
+
+    ImprimeOpcoesSalvar();
+    cin >> opcao;
+    clearCin();
+
+    switch(opcao){
+
+        case 1:
+            file = fopen(ENC_FILE, "w");
+            encadeada.salvarArquivo(file);
+            fclose(file);
+            break;
+        case 2:
+            file = fopen(SORT_FILE, "w");
+            sort.salvarArquivo(file);
+            fclose(file);
+            break;
+        default:
+            cout << "OPCAO INVALIDA" << endl;
+            clearCin();
+            getchar();
+    }
 }
 
 void Tela::ImprimeListaArquivos(){
@@ -329,6 +356,16 @@ void Tela::ImprimeOpcoesSort(){
     cout <<"6 - Merge-Sort"<< endl;
     cout <<"*DIGITE -1 PARA SAIR*"<< endl;
     cout <<"Opcao 1-6:";
+}
+
+void Tela::ImprimeOpcoesSalvar(){
+
+    getchar();
+    system("clear");
+    cout <<"---- MENU SALVAR ----"<< endl;
+    cout <<"1 - Lista Encadeada"<< endl;
+    cout <<"2 - Lista Ordenada"<< endl;
+    cout <<"Opcao 1-2:";
 }
 
 void Tela::clearCin(){

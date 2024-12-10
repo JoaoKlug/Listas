@@ -11,6 +11,7 @@ using namespace std;
 
 #define SEQ_FILE "./txt/SEQ.txt"
 #define ENC_FILE "./txt/ENC.txt"
+#define SORT_FILE "./txt/SORT.txt"
 
 class Tela {
 
@@ -55,6 +56,7 @@ public:
     void ImprimeOpcoesAcao();
     void ImprimeOpcoesCrud();
     void ImprimeOpcoesSort();
+    void ImprimeOpcoesSalvar();
     void clearCin();
 
     void executar();
